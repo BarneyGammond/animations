@@ -1,0 +1,182 @@
+body {
+    background-color: whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+
+.loader {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+    background-color: whitesmoke;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.logo::before, .logo::after {
+    z-index: 1;
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    border: 4px solid transparent;
+    width: 100%;
+    height: 100%;
+    animation-timing-function: linear;
+}
+
+.logo::before {
+    border-right-color: transparent;
+    animation: border-before 2s infinite;
+    animation-direction: alternate;
+}
+
+.logo::after {
+    border-left-color: transparent;
+    animation: border-after 2s infinite;
+    animation-direction: alternate;
+    bottom: 0px;
+    right: 0px;
+}
+
+.red {
+    position: absolute;
+    background-color: #A63A50;
+    top: 0px;
+    height: 100%;
+    border-right: black 4px solid;
+    animation: red-box 2s infinite;
+    animation-direction: alternate;
+}
+
+.orange {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 75%;
+    background-color: #F09D51;
+    border-top: 4px solid black;
+    animation: orange-box 2s infinite;
+    animation-direction: alternate;
+}
+
+.white {
+    position: absolute;
+    background-color: white;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    border-left: black solid 4px;
+    animation: white-box 2s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes border-before {
+    0% {
+        width: 0;
+        height: 0;
+        border-top-color: black;
+    }
+    12.49% {
+        border-right-color: transparent;
+    }
+    12.5% {
+        height: 0;
+        width: 100%;
+        border-right-color: black;
+    }
+    25%, 100% {
+        height: 100%;
+        border-top-color: black;
+        border-right-color: black;
+    }
+}
+
+@keyframes border-after {
+    0% {
+        width: 0;
+        height: 0;
+        border-left-color: transparent
+    }
+    24.99% {
+        border-bottom-color: transparent;
+    }
+    25% {
+        width: 0;
+        border-bottom-color: black;
+    }
+    37.49% {
+        border-left-color: transparent;
+    }
+    37.5%{
+        width: 100%;
+        height: 0;
+        border-left-color: black;
+    }
+    50%,
+    100% {
+        height: 100%;
+        border-bottom-color: black;
+        border-left-color: black;
+    }
+}
+
+@keyframes red-box {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    49.99% {
+        opacity: 0;
+    }
+    50% {
+        width: 0;
+        opacity: 1;
+    }
+    65%, 
+    100% {
+        width: 25%;
+    }
+}
+
+@keyframes orange-box {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    64.99% {
+        opacity: 0;
+    }
+    65% {
+        height: 0;
+        opacity: 1;
+    }
+    80%, 
+    100% {
+        height: 50%;
+    }
+}
+
+@keyframes white-box {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    74.99% {
+        opacity: 0;
+    }
+    75% {
+        width: 0;
+        opacity: 1;
+    }
+    90%,
+    100% {
+        width: 20%
+    }
+}
